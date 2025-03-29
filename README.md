@@ -1,4 +1,5 @@
 Weather App
+
 This Weather App is a simple, user-friendly web application that allows users to check real-time weather data for any location around the world. Built using HTML, CSS, and JavaScript, this app fetches weather information from a free weather API and presents it in an easy-to-read format.
 
 Features:
