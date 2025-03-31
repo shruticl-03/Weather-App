@@ -11,7 +11,7 @@
 <body>
     <div class="card">
         <div class="search">
-            <input type="text" placeholder="Enter City name" spellcheck="false">
+            <input type="text" placeholder="Enter City Name" spellcheck="false">
             <button><img src="images/search.png"></button>
         </div>
         <div class="weather">
@@ -39,10 +39,13 @@
 
     <script>
         const apiKey = "be31b0cd45ea3faeac71d82d242d9eb2";
-        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=bangalore";
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
-        async function checkWeather() {
-            const response = await fetch(apiUrl + `&appid=${apiKey}`);
+        const searchBox = document.querySelector(".search input");
+        const searchBtn = document.querySelector(".search button");
+
+        async function checkWeather(city) {
+            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
             var data = await response.json();
 
             console.log(data);
@@ -50,9 +53,11 @@
             document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
             document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
             document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-
         }
-        checkWeather();
+
+        searchBtn.addEventListener("click", () => {
+            checkWeather(searchBox.value);
+        })
 
     </script>
 
