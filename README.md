@@ -20,3 +20,5 @@ How to Use:
 2.Open index.html in your web browser.
 3.Enter the name of a city in the search bar to see the current weather for that location.
 4.Toggle between Celsius and Fahrenheit to view temperature in your preferred unit.
+
+Link to open the project: https://weatherapp-shruti.netlify.app/
